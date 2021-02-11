@@ -56,7 +56,7 @@ Not required but recommended.
 
 **Default Value:**
 
-https://acdn.adnxs.com/prebid/not-for-prod/1/prebid.js
+https://acdn.adnxs.com/prebid/not-for-prod/prebid.js
 
 **Example:**
 
@@ -93,8 +93,6 @@ See [Setting Up Prebid Parameters](#set-up-params) below
 **Description:**
 
 Define aliases for bidders that are being specified in the biddersSpec. Using aliases allows to you to use the same bidder more than once with different targeting parameters.
-
-Define some behaviors for the platform and specific adapters. The basic structure is a ‘standard’ section with defaults for all adapters, and then one or more adapter-specific sections that override behavior for that bidder.
 
 **Acceptable Values:**
 
@@ -314,7 +312,7 @@ None
 
 **Description:**
 
-Parameters used when using DFP as the ad server.
+Parameters used when using Google Ad Manager as the ad server.
 
 See prebid.org documentation for [buildVideoUrl]({{site.baseurl}}/dev-docs/publisher-api-reference.html#module_pbjs.adServers.dfp.buildVideoUrl)
 
@@ -324,21 +322,20 @@ JSON object
 
 Can contain the following fields:
 
-- `params`: JSON object containing parameters needed to make DFP call. Parameters include:
+- `params`: JSON object containing parameters needed to make Google Ad Manager call. Parameters include:
   - `iu`: string (Required)
-  - DFP adUnit ID. For more information, see the DFP documentation on iu.
-
-- `cust_params`: JSON object (Optional). Key-value pairs that will be sent to DFP on the video ad tag URL. If present, any key-values here will be merged with Prebid standard targeting key-values. For more information, see the DFP documentation on cust_params
+  - Google Ad Manager adUnit ID. For more information, see the Google Ad Manager documentation on iu.
+  - `cust_params`: JSON object (Optional). Key-value pairs that will be sent to Google Ad Manager on the video ad tag URL. If present, any key-values here will be merged with Prebid standard targeting key-values. For more information, see the Google Ad Manager documentation on cust_params.
 
 - `output`: (Required) String specifying the type of response expected. This value should be `"vast"`
 
-- `url`: String specifying the DFP ad tag to call. You can use this parameter rather then using the `params` object to specify the DFP tag. This URL MUST contain the DFP `iu` value fully resolved. This URL may contain any other parameters that need to be passed to DFP. This string can NOT contain any `#` characters - all macros using that syntax must be fully resolved
+- `url`: String specifying the Google Ad Manager ad tag to call. You can use this parameter rather then using the `params` object to specify the Google Ad Manager tag. This URL MUST contain the Google Ad Manager `iu` value fully resolved. This URL may contain any other parameters that need to be passed to Google Ad Manager. This string can NOT contain any `#` characters - all macros using that syntax must be fully resolved
 
 - `bid`: (Optional) JSON object describing the Prebid bid for which targeting will be set. If this is not defined, Prebid will use the bid with the highest CPM for the adUnit.
 
 **Required?**
 
-No - If present, then DFP is considered to be the primary ad server and the results of the prebid auction will be passed to DFP. One or both of `dfpParameters.params` and `dfpParameters.url` is required.
+No - If present, then Google Ad Manager is considered to be the primary ad server and the results of the prebid auction will be passed to Google Ad Manager. One or both of `dfpParameters.params` and `dfpParameters.url` is required.
 
 **Default Value:**
 

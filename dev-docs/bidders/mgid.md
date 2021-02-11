@@ -2,9 +2,10 @@
 layout: bidder
 title: Mgid
 description: Prebid Mgid Bidder Adapter.
-hide: true
+pbjs: true
+pbs: true
 biddercode: mgid
-media_types: banner
+media_types: banner,native
 gdpr_supported: true
 ---
 
@@ -52,8 +53,7 @@ var adUnits = [{
   bids: [{
     bidder: 'mgid',
     params : {
-      accountId : "219", //test accountId, please replace after test
-      placementId : "331749" // 300x600 test placementId, please replace after test
+      accountId : "219" //test accountId, please replace after test
     }
   }]
 }];
@@ -72,8 +72,7 @@ var adUnits = [{
   bids: [{
     bidder: 'mgid',
     params : {
-      accountId : "219", //test accountId, please replace after test
-      placementId : "331748" // 300x250 test placementId, please replace after test
+      accountId : "219" //test accountId, please replace after test
     }
   }]
 }];
@@ -107,8 +106,7 @@ var adUnits = [{
   bids: [{
     bidder: 'mgid',
     params : {
-        accountId : "219", //test accountId, please replace after test
-        placementId : "350971" // 300x250 test placementId, please replace after test
+        accountId : "219" //test accountId, please replace after test
     }
   }]
 }];
